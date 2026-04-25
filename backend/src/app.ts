@@ -139,6 +139,12 @@ app.get("/api/health", (_req, reply) => {
   reply.send();
 });
 
+/* Добавлен запрос logout */
+app.delete("/api/logout", (_req, reply) => {
+  _req.session.destroy();
+  reply.send();
+});
+
 app.post<{ Body: PostAuthUserBody }>("/api/auth/user", {
   schema: {
     body: {

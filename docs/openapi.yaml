@@ -94,9 +94,33 @@ paths:
         '500':
           $ref: '#/components/responses/500'
 
+  /api/logout:
+    delete:
+      operationId: getLogout
+      tags:
+        - Auth
+      summary: Удаляет текущую сессию авторизованного пользователя.
+      description: Удаляет текущую сессию авторизованного пользователя.
+      security:
+        - session_id: []
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: string
+              example: ''
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+
   /api/me:
     get:
-      operationId: getMe
+      operationId: logout
       tags:
         - Auth
       summary: Возвращает информацию о текущем аутентифицированном пользователе
@@ -366,6 +390,32 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+    delete:
+      operationId: deleteBook
+      tags:
+        - Books
+      summary: Удалить информацию по выбранной книге
+      description: >-
+        Удаляет информацию по выбранной книге из каталога. Запрос разрешён только для пользователей с ролью
+        `admin`.
+      security:
+        - session_id: []
+      parameters:
+        - $ref: '#/components/parameters/bookId'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: string
+              example: ''
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
 components:
   parameters:
     # query
@@ -529,4 +579,5 @@ components:
       description: Идентификатор сессии пользователя.
       type: apiKey
       in: cookie
+
 
