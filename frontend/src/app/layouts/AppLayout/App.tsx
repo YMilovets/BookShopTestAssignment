@@ -1,12 +1,14 @@
-import { ThemeProvider } from "@/app/providers";
+import { ReduxProvider, ThemeProvider } from "@/app/providers";
 
 import RouterLayout from "../RouterLayout";
 
 function App() {
   return (
-    <ThemeProvider>
-      <RouterLayout />
-    </ThemeProvider>
+    <ReduxProvider>
+      <ThemeProvider>
+        <RouterLayout />
+      </ThemeProvider>
+    </ReduxProvider>
   );
 }
 
