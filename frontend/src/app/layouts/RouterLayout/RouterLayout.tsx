@@ -20,6 +20,13 @@ const router = createBrowserRouter([
           })),
       },
       {
+        path: Pages.Login,
+        lazy: () =>
+          import("@/pages/login").then((module) => ({
+            Component: module.Login,
+          })),
+      },
+      {
         path: Pages.Main,
         element: <section>Home</section>,
       },
