@@ -15,7 +15,7 @@ import { LoginFormProps } from "./types";
 function LoginForm({ children, ...props }: LoginFormProps) {
   const dispatch = useAppDispatch();
   const login = useAppSelector((state) => state.sessionReducer.login);
-  const { isCorrectCookiesURL } = useCorrectCookies();
+  const { isCorrectCookiesURL } = useCorrectCookies(login);
 
   const handleSubmit = async (_: unknown, formData: FormData) => {
     try {
