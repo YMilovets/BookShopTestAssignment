@@ -1,3 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-export const rootReducer = combineReducers({});
+import { sessionReducer, sessionReducerPath } from "@/entities/users";
+
+export const rootReducer = combineReducers({
+  [sessionReducerPath]: sessionReducer,
+});
