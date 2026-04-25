@@ -6,3 +6,4 @@ export {
   useGetBooksQuery,
 } from "./api";
 export { useBooks } from "./hooks";
+export { default as BooksCard } from "./ui/BooksCard";
