@@ -2,6 +2,7 @@ import { Box, Toolbar, Typography } from "@mui/material";
 
 import { Navigation, Toolbar as ToolbarContainer } from "@/features/header";
 import { ThemeControl } from "@/features/main";
+import { Profile as UserProfile } from "@/features/session";
 
 function Header() {
   return (
@@ -17,6 +18,7 @@ function Header() {
         <Navigation />
         <Box sx={{ ml: "auto", display: "flex", alignItems: "center", gap: 2 }}>
           <ThemeControl />
+          <UserProfile />
         </Box>
       </Toolbar>
     </ToolbarContainer>
