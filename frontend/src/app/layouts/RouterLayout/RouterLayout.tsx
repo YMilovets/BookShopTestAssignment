@@ -4,6 +4,8 @@ import { RouterProvider } from "react-router/dom";
 import { loader as rootLoader } from "@/shared/api";
 import { Pages } from "@/shared/config";
 
+import { Books } from "@/pages/books";
+
 import MainLayout from "../MainLayout";
 
 const router = createBrowserRouter([
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
           import("@/pages/login").then((module) => ({
             Component: module.Login,
           })),
+      },
+      {
+        path: Pages.Books,
+        element: <Books />,
       },
       {
         path: Pages.Main,
