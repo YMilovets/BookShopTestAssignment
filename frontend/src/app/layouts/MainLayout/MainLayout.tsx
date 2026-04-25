@@ -1,10 +1,15 @@
 import { Outlet } from "react-router";
 
+import { Header } from "@/widgets/header";
+
 function MainLayout() {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 }
 

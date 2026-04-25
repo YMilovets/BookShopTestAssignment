@@ -1,8 +1,12 @@
+import { ThemeProvider } from "@/app/providers";
+
 import RouterLayout from "../RouterLayout";
 
 function App() {
   return (
-    <RouterLayout />
+    <ThemeProvider>
+      <RouterLayout />
+    </ThemeProvider>
   );
 }
 
