@@ -1,5 +1,7 @@
 import { Box, SxProps, Theme } from "@mui/material";
 
+import { BooksSort } from "@/features/books";
+
 import BooksCatalog from "./BooksCatalog";
 
 const styles: SxProps<Theme> = {
@@ -14,6 +16,7 @@ const styles: SxProps<Theme> = {
 function Books() {
   return (
     <Box sx={styles} component="section">
+      <BooksSort />
       <BooksCatalog />
     </Box>
   );
