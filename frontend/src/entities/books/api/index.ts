@@ -2,6 +2,7 @@ export {
   booksMiddleware,
   booksReducer,
   booksReducerPath,
+  useEditBookMutation,
   useGetBooksQuery,
   usePostBookMutation,
 } from "./books";

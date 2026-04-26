@@ -11,6 +11,7 @@ export const {
   middleware: booksMiddleware,
   useGetBooksQuery,
   usePostBookMutation,
+  useEditBookMutation,
 } = createApi({
   reducerPath: BOOKS_PATH,
   baseQuery: fetchBaseQuery({ baseUrl: getApiURL() }),
@@ -29,6 +30,20 @@ export const {
           url: BOOKS_PATH,
           body: JSON.stringify(body),
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }),
+        invalidatesTags: ["Books"],
+      }),
+      editBook: builder.mutation<
+        void,
+        { id: string; body: Partial<PostBookRequests> }
+      >({
+        query: ({ id, body }) => ({
+          url: `${BOOKS_PATH}/${id}`,
+          body: JSON.stringify(body),
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },

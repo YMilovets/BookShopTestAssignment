@@ -9,6 +9,7 @@ import { Pages } from "@/shared/config";
 
 const AccessControl = lazy(() => import("@/features/session/ui/AccessControl"));
 const Add = lazy(() => import("@/pages/new/ui/Add"));
+const Edit = lazy(() => import("@/pages/edit/ui/Edit"));
 
 import { Books } from "@/pages/books";
 
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
           import("@/pages/book").then((module) => ({
             Component: module.Book,
           })),
+      },
+      {
+        path: `${Pages.Books}/:id/edit`,
+        element: (
+          <AccessControl>
+            <Edit />
+          </AccessControl>
+        ),
       },
       {
         path: Pages.Main,

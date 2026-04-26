@@ -3,6 +3,7 @@ export {
   booksMiddleware,
   booksReducer,
   booksReducerPath,
+  useEditBookMutation,
   useGetBooksQuery,
   usePostBookMutation,
 } from "./api";
