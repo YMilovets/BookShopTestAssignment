@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
@@ -5,6 +6,9 @@ import { loader } from "@/pages/home";
 import { loader as logoutLoader } from "@/pages/logout";
 import { loader as rootLoader } from "@/shared/api";
 import { Pages } from "@/shared/config";
+
+const AccessControl = lazy(() => import("@/features/session/ui/AccessControl"));
+const Add = lazy(() => import("@/pages/new/ui/Add"));
 
 import { Books } from "@/pages/books";
 
@@ -41,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: Pages.Logout,
         loader: logoutLoader,
+      },
+      {
+        path: Pages.New,
+        element: (
+          <AccessControl>
+            <Add />
+          </AccessControl>
+        ),
       },
     ],
   },
