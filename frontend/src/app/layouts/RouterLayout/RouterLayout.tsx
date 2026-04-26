@@ -39,6 +39,13 @@ const router = createBrowserRouter([
         element: <Books />,
       },
       {
+        path: `${Pages.Books}/:id`,
+        lazy: () =>
+          import("@/pages/book").then((module) => ({
+            Component: module.Book,
+          })),
+      },
+      {
         path: Pages.Main,
         loader,
       },
