@@ -1,7 +1,7 @@
 import { CircularProgress, Grid } from "@mui/material";
 
 import { BooksCard, useBooks } from "@/entities/books";
-import { ButtonLink } from "@/features/header";
+import { ButtonLink } from "@/shared/ui";
 import { formatDate } from "@/shared/utils";
 
 import BooksAlert from "../BooksAlert";

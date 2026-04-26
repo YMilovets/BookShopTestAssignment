@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 
 import { ButtonLinkProps } from "./types";
 
-function ButtonLink({ children, path, ...props }: ButtonLinkProps) {
+function ButtonLink({ children, path = "", ...props }: ButtonLinkProps) {
   const { pathname } = useLocation();
 
   const isCurrent = pathname === path;

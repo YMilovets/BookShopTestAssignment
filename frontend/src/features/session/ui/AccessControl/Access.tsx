@@ -2,8 +2,8 @@ import { Theme } from "@emotion/react";
 import { Alert, AlertTitle, Box, SxProps } from "@mui/material";
 
 import { useAppSelector } from "@/app/hooks";
-import { ButtonLink } from "@/features/header";
 import { Pages } from "@/shared/config";
+import { ButtonLink } from "@/shared/ui";
 
 import { AccessProps } from "./types";
 

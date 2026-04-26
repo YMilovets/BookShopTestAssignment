@@ -2,8 +2,8 @@ import { Box } from "@mui/material";
 
 import { useAppSelector } from "@/app/hooks";
 import { useRoutes } from "@/shared/hooks";
+import { ButtonLink } from "@/shared/ui";
 
-import ButtonLink from "../ButtonLink";
 import SessionObserver from "../SessionObserver";
 
 function Navigation() {
