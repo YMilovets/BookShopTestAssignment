@@ -9,4 +9,10 @@ export {
   useRemoveBooksMutation,
 } from "./api";
 export { useBooks } from "./hooks";
+export {
+  setSortingAtQuery,
+  setSortingByQuery,
+  sortingReducer,
+  sortingReducerPath,
+} from "./model";
 export { default as BooksCard } from "./ui/BooksCard";
