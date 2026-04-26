@@ -1,5 +1,3 @@
-import { UserRole } from "@/entities/users";
-
 import { Pages } from "./pages";
 
 export type PageType = {
@@ -8,3 +6,5 @@ export type PageType = {
   path?: string;
   access?: UserRole;
 };
+
+export type UserRole = "admin" | "user" | "noAuth";

@@ -1,14 +1,11 @@
-import { useAppSelector } from "@/app/hooks";
-import { Pages, PagesList, PageType } from "@/shared/config";
+import { Pages, PagesList, PageType, UserRole } from "@/shared/config";
 
-export default function useRoutes(): Array<PageType> {
+export default function useRoutes(role: UserRole = "user"): Array<PageType> {
   const pagesConfig: Record<string, string> = {
     [Pages.Books]: "Каталог",
     [Pages.New]: "Добавить книгу",
     [Pages.Logout]: "Выйти",
   };
-
-  const role = useAppSelector((state) => state.sessionReducer.role);
 
   return PagesList.map(({ id, path, access }) => ({
     id,

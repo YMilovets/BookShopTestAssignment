@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 
+import { useAppSelector } from "@/app/hooks";
 import { useRoutes } from "@/shared/hooks";
 
 import ButtonLink from "../ButtonLink";
 import SessionObserver from "../SessionObserver";
 
 function Navigation() {
-  const routes = useRoutes();
+  const role = useAppSelector((state) => state.sessionReducer.role);
+  const routes = useRoutes(role);
 
   return (
     <SessionObserver>
