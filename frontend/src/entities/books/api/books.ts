@@ -12,6 +12,7 @@ export const {
   useGetBooksQuery,
   usePostBookMutation,
   useEditBookMutation,
+  useRemoveBooksMutation,
 } = createApi({
   reducerPath: BOOKS_PATH,
   baseQuery: fetchBaseQuery({ baseUrl: getApiURL() }),
@@ -24,6 +25,13 @@ export const {
           params,
         }),
         providesTags: ["Books"],
+      }),
+      removeBooks: builder.mutation<void, string>({
+        query: (id) => ({
+          url: `${BOOKS_PATH}/${id}`,
+          method: "DELETE",
+        }),
+        invalidatesTags: ["Books"],
       }),
       postBook: builder.mutation<void, PostBookRequests>({
         query: (body) => ({

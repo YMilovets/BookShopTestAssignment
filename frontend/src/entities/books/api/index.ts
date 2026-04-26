@@ -5,5 +5,6 @@ export {
   useEditBookMutation,
   useGetBooksQuery,
   usePostBookMutation,
+  useRemoveBooksMutation,
 } from "./books";
 export type { BooksRequests } from "./types";

@@ -4,6 +4,8 @@ import { Link } from "react-router";
 
 import { useAppSelector } from "@/app/hooks";
 
+import RemoveConfirm from "../RemoveConfirm";
+
 import { ControlProps } from "./types";
 
 function Control({ children }: ControlProps) {
@@ -13,16 +15,19 @@ function Control({ children }: ControlProps) {
   return (
     <Paper sx={{ display: "flex" }}>
       {isAccess && (
-        <Button
-          component={Link}
-          aria-label="Редактировать"
-          title="Редактировать запись"
-          to="edit"
-          sx={{ gap: 1 }}
-        >
-          <Edit color="primary" sx={{ width: 16 }} fontSize="small" />
-          Редактировать
-        </Button>
+        <>
+          <Button
+            component={Link}
+            aria-label="Редактировать"
+            title="Редактировать запись"
+            to="edit"
+            sx={{ gap: 1 }}
+          >
+            <Edit color="primary" sx={{ width: 16 }} fontSize="small" />
+            Редактировать
+          </Button>
+          <RemoveConfirm />
+        </>
       )}
       {children}
     </Paper>
