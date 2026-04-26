@@ -1,7 +1,6 @@
 import { Box, Toolbar, Typography } from "@mui/material";
 
-import { Navigation, Toolbar as ToolbarContainer } from "@/features/header";
-import { ThemeControl } from "@/features/main";
+import { Navigation, ThemeControl, Toolbar as ToolbarContainer } from "@/features/header";
 import { Profile as UserProfile } from "@/features/session";
 
 function Header() {
